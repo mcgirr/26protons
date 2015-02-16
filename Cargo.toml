@@ -1,2 +1,5 @@
-[dependencies]
-iron = "*"
+[package]
+
+name = "26protons"
+version = "0.0.1"
+authors = ["michaelmcgirr <michaelgordonmcgirr@gmail.com>"]
