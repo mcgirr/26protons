@@ -8,4 +8,7 @@ more about the [Iron](http://ironframework.io/) framework
 https://github.com/iron/iron which is **Awesome** and written in 
 the [Rust programming language](http://www.rust-lang.org/)
 
+So far this is simply a reworking of the [staticfile example](https://github.com/iron/staticfile).
+
+
 

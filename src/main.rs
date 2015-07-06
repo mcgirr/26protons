@@ -1,14 +1,33 @@
 extern crate iron;
+extern crate twenty_six_protons;
+extern crate mount;
 
-use iron::prelude::*;
-use iron::status;
+// This example serves the docs from target/doc/staticfile at /doc/
+
+// TODO figure out how this works
+// Run `cargo doc && cargo test && ./target/doc_server`, then
+// point your browser to http://127.0.0.1:3000/doc/
+
+use std::path::Path;
+
+use iron::Iron;
+use twenty_six_protons::Static;
+use mount::Mount;
 
 fn main() {
-    fn hello_world(_: &mut Request) -> IronResult<Response> {
-        Ok(Response::with((status::Ok, "Hello World!")))
-    }
+    let mut mount = Mount::new();
 
-    Iron::new(hello_world).listen("localhost:3000").unwrap();
-    println!("On 3000");
+    // Serve the shared JS/CSS at /
+    mount.mount("/", Static::new(Path::new("target/doc/")));
+    
+    // Serve the static file docs at /doc/
+    mount.mount("/doc/", Static::new(Path::new("target/doc/staticfile/")));
+    
+    // Serve the source code at /src/
+    mount.mount("/src/", Static::new(Path::new("target/doc/src/staticfile/lib.rs.html")));
+
+    println!("Doc server running on http://localhost:3000/doc/");
+
+    Iron::new(mount).http("127.0.0.1:3000").unwrap();
 }
 
