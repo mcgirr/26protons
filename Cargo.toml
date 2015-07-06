@@ -17,6 +17,7 @@ mount = "*"
 time = "*"
 router = "*"
 log = "*"
+staticfile = "*"
 
 [dependencies.filetime]
 version = "*"

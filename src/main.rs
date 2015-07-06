@@ -1,5 +1,5 @@
 extern crate iron;
-extern crate twenty_six_protons;
+extern crate staticfile;
 extern crate mount;
 
 // This example serves the docs from target/doc/staticfile at /doc/
@@ -11,7 +11,7 @@ extern crate mount;
 use std::path::Path;
 
 use iron::Iron;
-use twenty_six_protons::Static;
+use staticfile::Static;
 use mount::Mount;
 
 fn main() {
