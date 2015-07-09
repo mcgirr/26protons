@@ -12,15 +12,12 @@ fn main() {
     let mut mount = Mount::new();
 
     // Serve the files from the html dir at /
-    mount.mount("/", Static::new(Path::new("html/")));
+    mount.mount("/", Static::new(Path::new("www/")));
     
-    // Serve the static file docs at /doc/
-    //mount.mount("/doc/", Static::new(Path::new("target/doc/staticfile/")));
-    
-    // Serve the source code at /src/
-    //mount.mount("/src/", Static::new(Path::new("target/doc/src/staticfile/lib.rs.html")));
+    // Serve the static blog files at /blog/
+    mount.mount("/blog/", Static::new(Path::new("www/html/blog.html")));
 
-    println!("Doc server running on http://localhost:3000/");
+    println!("Server running on http://localhost:3000/");
 
     Iron::new(mount).http("127.0.0.1:3000").unwrap();
 }
