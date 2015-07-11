@@ -15,7 +15,7 @@ fn main() {
     mount.mount("/", Static::new(Path::new("www/")));
     
     // Serve the static blog files at /blog/
-    mount.mount("/blog/", Static::new(Path::new("www/html/blog.html")));
+    mount.mount("/blog/", Static::new(Path::new("www/blog.html")));
 
     println!("Server running on http://localhost:3000/");
 
