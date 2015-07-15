@@ -28,7 +28,10 @@ header {
 
 @keyframes pulse {
    0% { 
-      background-color: #333838; 
+       /* while hot orange */  
+       background-color: #ee8463;
+       /* Dark slate (same as background */ 
+       /* background-color: #333838; */ 
    }
    100% {
        /* This will be the final background color */
@@ -39,8 +42,11 @@ header {
 }
 
 @keyframes pulse-post {
-   0% { 
-      background-color: #333838; 
+   0% {        
+       /* while hot orange */  
+       background-color: #ee8463;
+       /* Dark slate (same as background */ 
+       /* background-color: #333838; */ 
    }
    100% {
        /* This will be the final background color */
@@ -81,11 +87,10 @@ header em {
     margin: 10vh 10vw 30vh 10vw;
     
     /* round the post box */
-    border-radius: 2rem 2rem 0rem 0rem;
+    border-radius: 2rem 2rem 2rem 2rem;
 
     animation: pulse-post 4s 1;
     animation-fill-mode: forwards;
-
 }
 
 .post-title {
@@ -114,6 +119,8 @@ header em {
 
 .post-image {
     width: 100%;
+    /* round the image corners */
+    border-radius: 1rem 1rem 1rem 1rem;
 }
 
 hr {
