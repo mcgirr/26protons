@@ -1,15 +1,11 @@
 [package]
-
 name = "twenty_six_protons"
 version = "0.0.1"
-authors = ["michaelmcgirr <mike@oatsmail.com>"]
+authors = ["mike mcgirr <mike@oatsmail.com>"]
 description = " "
 repository = "https://github.com/michaelmcgirr/26protons"
 license = "MIT"
 readme = "README.md"
-
-[features]
-cache = ["filetime"]
 
 [dependencies] 
 iron = "*"
@@ -18,11 +14,3 @@ time = "*"
 router = "*"
 log = "*"
 staticfile = "*"
-
-[dependencies.filetime]
-version = "*"
-optional = true
-
-[dev-dependencies]
-iron-test = "*"
-hyper = "*"
